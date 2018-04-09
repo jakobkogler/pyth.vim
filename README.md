@@ -4,6 +4,14 @@ Assistance for writing [Pyth](https://github.com/isaacg1/pyth) code in vim.
 
 Allows execution of `.pyth` files, changing the input comfortable, lookup the Pyth documentation and open the Pyth REPL.
 
+## Usage
+
+Read the [documentation](https://raw.githubusercontent.com/jakobkogler/pyth.vim/master/doc/pyth.txt)
+
+You can access the documentation from vim with
+
+    :help pyth
+
 ## Installation
 
 Using [vim-plug](https://github.com/junegunn/vim-plug):
