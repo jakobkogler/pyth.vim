@@ -22,6 +22,15 @@ COMMANDS                                        *pyth-commands*
                                                 *:PythOutputClose*
 :PythOutputClose        Closes the output window.
 
+                                                *:PythDocu*
+:PythDocu [token]       Opens a window with the Pyth documentation.
+                        If [token] is specified, then it jumps to the token.
+                        If there are multiple appearances of [token] in the
+                        help file, you can jump between them using |n| and |N|.
+
+                                                *:PythDocuClose*
+:PythDocuClose          Closes the documentation window.
+
                                                 *:PythREPL*
 :PythREPL               Opens a terminal window with the Pyth REPL.
 
@@ -32,10 +41,12 @@ Additional the plugin defines mappings for the important commands.
   -------------------------------------------------------~
    LHS                   RHS                        MODE~
   -------------------------------------------------------~
-   <leader>r             |:PythRun|                    `n`
-   <leader>i             |:PythInput|                  `n`
-   <leader>I             |:PythInputClose|             `n`
-   <leader>T             |:PythOutputClose|            `n`
+   <leader>r             |:PythRun<cr>|                `n`
+   <leader>i             |:PythInput<cr>|              `n`
+   <leader>I             |:PythInputClose<cr>|         `n`
+   <leader>T             |:PythOutputClose<cr>|        `n`
+   <leader>d             |:PythDocu|                   `n`
+   <leader>D             |:PythDocuClose<cr>|          `n`
   -------------------------------------------------------~
 
  vim:tw=78:et:ft=help:norl:

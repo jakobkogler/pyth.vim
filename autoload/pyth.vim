@@ -1,4 +1,4 @@
-let s:pyth_exec = expand("<sfile>:p:h:h") . "/pyth/pyth.py"
+let s:pyth_dir = expand("<sfile>:p:h:h") . "/pyth/"
 
 function! pyth#REPL()
     execute "terminal " . s:pyth_exec
@@ -9,7 +9,7 @@ function! pyth#Run()
    
     silent! !clear
     silent! execute "!touch " . l:file . ".in"
-    silent! execute "!" . s:pyth_exec . " --newline " . l:file . " <" . l:file . ".in &>" . l:file . ".out"
+    silent! execute "!" . s:pyth_dir . "pyth.py --newline " . l:file . " <" . l:file . ".in &>" . l:file . ".out"
     redraw!
 
     if !pyth#GotoWindow(l:file . ".out")
@@ -51,5 +51,27 @@ function! pyth#GotoWindow(filename)
     if l:win_nr > 0
         execute l:win_nr . "wincmd w"
         return 1
+    endif
+endfunction
+
+function! pyth#Docu(searchstring)
+    let helpfile = s:pyth_dir . "rev-doc.txt"
+    if !pyth#GotoWindow(helpfile)
+        execute "belowright split " . helpfile
+    endif
+    let l = strlen(a:searchstring)
+    if l == 1 || (l == 2 && l[0] == ".")
+        let @/ = "^" . a:searchstring
+        normal! n
+    elseif l > 0
+        let @/ = a:searchstring
+        normal! n
+    endif
+endfunction
+
+function! pyth#DocuClose()
+    let helpfile = s:pyth_dir . "rev-doc.txt"
+    if pyth#GotoWindow(helpfile)
+        bdelete
     endif
 endfunction
