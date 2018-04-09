@@ -1,0 +1,41 @@
+*pyth.txt*  Assistance for writing Pyth code in vim
+
+INTRODUCTION                                    *pyth*
+
+This plugin defines a few commands for executing Pyth code that become
+available whenever a file with the extension .pyth is edited.
+In addition it also defines a command to open the Pyth REPL.
+This command is avaliable from everywhere.
+
+COMMANDS                                        *pyth-commands*
+
+                                                *:PythRun*
+:PythRun                Runs the code of the current Pyth file and
+                        outputs the result in a nonmodifiable window.
+
+                                                *:PythInput*
+:PythInput              Opens a window for writing the input for the program.
+
+                                                *:PythInputClose*
+:PythInputClose         Closes the input window.
+
+                                                *:PythOutputClose*
+:PythOutputClose        Closes the output window.
+
+                                                *:PythREPL*
+:PythREPL               Opens a terminal window with the Pyth REPL.
+
+MAPPINGS                                        *pyth-mappings*
+
+Additional the plugin defines mappings for the important commands.
+
+  -------------------------------------------------------~
+   LHS                   RHS                        MODE~
+  -------------------------------------------------------~
+   <leader>r             |:PythRun|                    `n`
+   <leader>i             |:PythInput|                  `n`
+   <leader>I             |:PythInputClose|             `n`
+   <leader>T             |:PythOutputClose|            `n`
+  -------------------------------------------------------~
+
+ vim:tw=78:et:ft=help:norl:
