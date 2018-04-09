@@ -1,0 +1,4 @@
+*.pyth
+*.pyth.in
+*.pyth.out
+doc/tags
