@@ -1,4 +1,5 @@
 let s:pyth_dir = expand("<sfile>:p:h:h") . "/pyth/"
+let s:pyth_exec = "python3 " . s:pyth_dir . 'pyth.py'
 
 function! pyth#REPL()
     execute "terminal " . s:pyth_exec
