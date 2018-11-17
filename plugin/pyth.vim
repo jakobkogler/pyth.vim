@@ -12,7 +12,7 @@ augroup pythgroup
     autocmd FileType pyth command! -buffer -nargs=? PythDocu call pyth#Docu("<args>")
     autocmd FileType pyth command! -buffer -nargs=0 PythDocuClose call pyth#DocuClose()
 
-    autocmd FileType pyth nnoremap <buffer> <leader>r :PythRun<cr>
+    autocmd FileType pyth nnoremap <buffer> <leader>r :w<cr>:PythRun<cr>
     autocmd FileType pyth nnoremap <buffer> <leader>i :PythInput<cr>
     autocmd FileType pyth nnoremap <buffer> <leader>I :PythInputClose<cr>
     autocmd FileType pyth nnoremap <buffer> <leader>R :PythOutputClose<cr>
